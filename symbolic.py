@@ -16,9 +16,11 @@ y_2=p**5*(-6*A**5 + 4*A**4*C + 8*A**3*C**2 - 16*A**2*C**3 - 2*A*C**4 + 12*C**5)/
 x=x_0+alpha*x_1
 y=y_0+alpha*y_1
 print('B_20=',(x**2+y**2),'1-й порядок')
-x=x_0+alpha*x_1+alpha**2*x_2
-y=y_0+alpha*y_1+alpha**2*y_2
+x=x_0+alpha*x_1#+alpha**2*x_2
+y=y_0+alpha*y_1#+alpha**2*y_2
 print('B_20=',(x**2+y**2),'2-й порядок')
+print(x)
+print(y)
 # eqs=(-A*x_1+C*y_1+2*x_0**2*y_0+2*y_0**3,
 # A*y_1+C*x_1+2*x_0*y_0**2+2*x_0**3)
 
