@@ -1,8 +1,9 @@
 import numpy as np
+from numpy.fft import *
 from scipy.integrate import odeint
+from scipy.signal import argrelextrema
 import matplotlib.pyplot as plt
-finite_time=500#should be less then 50
-delta_0=0.5
+from scipy.optimize import curve_fit
 chi_21=1
 chi_31=4/9
 chi_22=chi_21
@@ -17,6 +18,9 @@ C_2=C_1
 C=1.1E-7
 L_1=0.5E-3
 L_2=L_1
+obr_omega=1#np.sqrt(L_1*C_1)
+delta_0=0.5#/(2*np.pi)/obr_omega
+# print(obr_omega,'=obr omega')
 zed=np.sqrt(L_1/C_1)
 # gamma_U_1=np.sqrt(L_1/C_1)/r_1
 varepsilon_0=0.3140916808149406
@@ -29,32 +33,34 @@ varepsilon_0=0.3140916808149406
 # print('alpha=',alpha)
 def model(z,t,varepsilon):
     noise =0# random.random()/10.0
-    U_1 = z[0]+noise
+    U_1 = z[0]
     V_1 = z[1]
-    U_2 = z[2]+noise
+    U_2 = z[2]
     V_2 = z[3]
     U_C = z[4]
-    V_C = zed / R*(U_1 - U_2-U_C- varepsilon)
-    dU_1dt = (1 + chi_21 * U_1 + chi_31 * U_1** 2)*(-zed / r_1 * U_1 + V_1 - V_C)
-    dV_1dt = (-R_1 / zed * z[1] - z[0])
-    dU_2dt = (1 + chi_22 * z[2] + chi_32 * z[2] ** 2)*(-zed * C_1 / r_2 / C_2 * z[2] + C_1 / C_2 * V_C - C_1 / C_2 * z[3])
-    dV_2dt = (-R_2 * L_1 / zed / L_2 * z[3] + L_1 / L_2 * z[2])
-    dU_Cdt =zed*C_1*(-1 / R / C * z[4] + 1 / C / R * (z[0] - z[2]) - 1 / C / R * varepsilon)
+    V_C = obr_omega*zed / R*(U_1 - U_2-U_C- varepsilon)
+    dU_1dt = obr_omega*(1 + chi_21 * U_1 + chi_31 * U_1** 2)*(-zed / r_1 * U_1 + V_1 - V_C)
+    dV_1dt = obr_omega*(-R_1 / zed * V_1 - U_1)
+    dU_2dt = obr_omega*C_1 / C_2 *((1 + chi_22 * U_2 + chi_32 * U_2 ** 2)*(-zed/ r_2 * U_2 +  V_C -  V_2))
+    dV_2dt = obr_omega*(-R_2 * L_1 / zed / L_2 * V_2 + L_1 / L_2 * U_2)
+    dU_Cdt =obr_omega*zed*C_1/C/R*(-U_C + (U_1 - U_2) -varepsilon)
     dzdt = [dU_1dt, dV_1dt, dU_2dt, dV_2dt, dU_Cdt]
     return dzdt
 
 # initial condition
-z_0 = [0.01,0,0.0,0,0]
+z_0 = [0.00001,0,0.0,0,0]
 
 # number of time points
-n = 500
 
 # time points
-dist=500
+dist=5000
+coef=5
+n = dist*coef
+
 t = np.linspace(0,dist,n)
 
 # step input
-varepsilon = varepsilon_0*np.cos((1+np.cos(delta_0*t))*t)#*np.heaviside(20-t,0)
+varepsilon = varepsilon_0*np.cos(t/(2*np.pi)/obr_omega)*np.cos(delta_0*t)#*np.heaviside(50-t,0)
 
 # store solution
 U_1 =np.empty_like(t)
@@ -85,16 +91,15 @@ for i in range(1,n):
 B_1=(U_1+U_2)/2
 B_2=(U_1-U_2)/2
 # plot results
-fin=int(finite_time/dist*n)
-plt.plot(t[:fin],B_1[:fin],'g',label='dark mode')
-# plt.plot(t[:fin],varepsilon[:fin],'r:',label='vareps')
-plt.plot(t[:fin],B_2[:fin],'b-',label='light mode')
+plt.plot(t[:],(np.abs(B_1[:])),'g',label='dark mode')
+# plt.plot(t[:],varepsilon[:],'r:',label='vareps')
+plt.plot(t[:],(np.abs(B_2[:])),'b-',label='light mode')
 plt.ylabel('values')
 plt.xlabel('time')
 plt.legend(loc='best')
 plt.show()
-Gamma= 0.060000000000000005
-alpha= 0.5
-p= 0.18508029784877095
-sigma= 0.13236581096849476
-sigma2= 0.10027712952158695
+# Gamma= 0.060000000000000005
+# alpha= 0.5
+# p= 0.18508029784877095
+# sigma= 0.13236581096849476
+# sigma2= 0.10027712952158695
