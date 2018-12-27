@@ -1,11 +1,15 @@
-delta=0.5
-sigma=0.102
-sigma2=0
+delta=0
+sigma=0.0317010832
+sigma2=0.1
 gamma=0.06
-alpha=0.5
+alpha=0
 p=0.185
+dist=20000
+FD=26000
 import numpy as np
+from numpy.fft import *
 from scipy.integrate import odeint
+import real_curcuit as rc
 def odeintz(func, z0, t, **kwargs):
     """An odeint-like function for complex valued differential equations."""
 
@@ -41,17 +45,35 @@ if __name__ == "__main__":
     def zfunc(z, t,gamma,sigma,sigma2,alpha,p):
         B_1,B_2 = z
         return [(-1j*delta-gamma + 2j*alpha*( np.abs(B_1)**2 +2*np.abs(B_2)**2))*B_1 +2j*alpha*B_2**2*np.conj(B_1),
-                (-1j * delta - gamma - 2 * sigma + 2j * alpha * (np.abs(B_2) ** 2 + 2 * np.abs(B_1) ** 2))*B_2 +
+                (-1j * delta - gamma - 2 * sigma +2j * sigma2 + 2j * alpha * (np.abs(B_2) ** 2 + 2 * np.abs(B_1) ** 2))*B_2 +
         2j * alpha * B_1 ** 2 * np.conj(B_2) + p]
     # Set up the inputs and call odeintz to solve the system.
-    z0 = np.array([0+0j, 0.02+0.03j])
-    t = np.arange(0, 3000,0.01)
-    z, infodict = odeintz(zfunc, z0, t, args=(gamma,sigma,sigma2,alpha,p), full_output=True)
-    import matplotlib.pyplot as plt
-    plt.clf()
-    plt.plot(t,np.sqrt( z[:,0].real**2+z[:,0].imag**2), label='B_1')
-    plt.plot(t,np.sqrt(  z[:,1].real**2+z[:,1].imag**2), label='B_2')
-    plt.xlabel('t')
-    plt.grid(True)
-    plt.legend(loc='best')
-    plt.show()
+    z0 = np.array([0.00001, 0])
+    t = np.arange(0, dist,1)
+    # real_curcuit(delta, chi_2, chi_3, R, r,zed, R_, C,  varepsilon_0, dist, coef):
+    t_1,B_1r,B_2r=rc.real_curcuit(delta,#delta
+                                  0,#chi2
+                                  0,#chi_3
+                                  0.10897247358851686,#R
+                                  0.1,#r
+                                  0.1,#zed
+                                  0.002,#R_
+                                  4,#k=C_/C
+                                  0.142552073818657,#varepsilon
+                                  dist,#dist
+                                  1,#coef
+                                  fi)#phi
+    for fi in np.arange(0, 2 * 3.14, 0.2):
+        z, infodict = odeintz(zfunc, z0, t, args=(gamma,sigma,sigma2,alpha,p), full_output=True)
+    # import matplotlib.pyplot as plt
+    # plt.clf()
+    # #print slow amplitudes
+    # # plt.plot(t,np.abs(z[:,0]), label='B_1')
+    # plt.plot(t,np.abs(z[:,1]), label='B_2')
+    # #print real values
+    # # plt.plot(t_1, np.abs(B_1r), label='B_1 real')
+    # # plt.plot(t_1, np.abs(B_2r), label='B_2 real')
+    # plt.xlabel('t')
+    # plt.grid(True)
+    # plt.legend(loc='best')
+    # plt.show()
