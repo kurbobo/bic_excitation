@@ -1,10 +1,10 @@
 from matplotlib import pyplot as plt
 import numpy as np
-Gamma= 6e-04*1e02
-alpha= 1e-02*1e02
-sigma= 0.12e-02*1e02
-sigma2=0# 4.999995000005001e-08
-delta_0= 0.5e-02*1e02
+Gamma= 5e-06
+alpha= 4.5001666666666666e-05
+sigma= 1.2499999875000003e-05
+sigma2= 1.2499999875000002e-09
+delta_0= 0.001
 B=np.arange(0.01,15,0.001)
 p=B*(Gamma+2*sigma)+1j*(2*sigma2+delta_0-2*alpha*B**2)*B
 plt.plot(np.abs(p),B)

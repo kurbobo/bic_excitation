@@ -105,13 +105,14 @@ def zfunc(z, t,delta, chi_2, chi_3, gamma_U,gamma_V,gamma_C,sigma,g):
     2j * alpha * B_1 ** 2 * np.conj(B_2) + p]
 # Set up the inputs and call odeintz to solve the system.
 z0 = np.array([0.000001, 0])
-delta=0.5
-chi_2=2e-02*1e02/2
-chi_3=1.2e-02*1e02/2
-gamma_U=6e-04*1e02
-gamma_V=6e-04*1e02
-gamma_C=1e-04
-sigma=2.5e-04*1e03
+amplitude=1e-02
+delta=2e-02*amplitude
+chi_2=1e-02*amplitude#*1e02
+chi_3=0.6e-02*amplitude#*1e02
+gamma_U=5e-04*amplitude#*1e02
+gamma_V=5e-04*amplitude#*1e02
+gamma_C=1e-04#????????
+sigma=2.5e-03*amplitude#*1e02
 dist=250000
 coef=1
 phi=0
@@ -119,7 +120,7 @@ phi=0
 t = np.arange(0, dist,1)
 gamma=(gamma_V+gamma_U)/2
 alpha=3*chi_3/4+chi_2**2/6
-g=0.185e-02*1e02/np.sqrt(2)
+g=5e-02/np.sqrt(2)*amplitude*1e02
 p=np.sqrt(2)*g#*1j
 # Gamma= 1e-03
 # alpha= 7.500166666666668e-06
@@ -134,19 +135,19 @@ print('delta_0=',delta)
 print('p=', p)
 print((sigma*gamma_C /(1 + gamma_C ** 2)+delta)**2-3*(gamma+sigma/(1+gamma_C**2))**2)
 # real_curcuit(delta, chi_2, chi_3, gamma_U,gamma_V,gamma_C,sigma, dist, coef,phi,g):
-# t_1,B_1r,B_2r=curcuit(delta=delta,
-#                                   chi_2=chi_2,
-#                                   chi_3=chi_3,
-#                                   gamma_U=gamma_U,
-#                            gamma_V=gamma_V,
-#                                   gamma_C=gamma_C,
-#                            sigma=sigma,
-#                                   dist=dist,
-#                                   coef=coef,
-#                                   phi=phi,
-#                            g=g)
-z, infodict = odeintz(zfunc, z0, t, args=(delta, chi_2, chi_3, gamma_U,gamma_V,gamma_C,sigma,g), full_output=True)
-print(np.abs(z[:,0][2400000]),'=itv')
+t_1,B_1r,B_2r=curcuit(delta=delta,
+                                  chi_2=chi_2,
+                                  chi_3=chi_3,
+                                  gamma_U=gamma_U,
+                           gamma_V=gamma_V,
+                                  gamma_C=gamma_C,
+                           sigma=sigma,
+                                  dist=dist,
+                                  coef=coef,
+                                  phi=phi,
+                           g=g)
+# z, infodict = odeintz(zfunc, z0, t, args=(delta, chi_2, chi_3, gamma_U,gamma_V,gamma_C,sigma,g), full_output=True)
+# print(np.abs(z[:,0][240000]),'=itv')
 # if(np.abs(z[:,0][2400000])>=0.25*np.abs(z[:,1][2400000])):
 #     print('p=', p)
 #     print('g=', g)
@@ -159,12 +160,12 @@ print(np.abs(z[:,0][2400000]),'=itv')
 # for i in range(dist):
 #     lst.append(max)
 #print slow amplitudes
-plt.plot(t,np.abs(z[:,0]), label='B_1')
-plt.plot(t,np.abs(z[:,1]), label='B_2')
+# plt.plot(t,np.abs(z[:,0]), label='B_1')
+# plt.plot(t,np.abs(z[:,1]), label='B_2')
 # plt.plot(t,lst, label='B_2')
 #print real values
-# plt.plot(t_1, np.abs(B_1r), label='B_1 real')
-# plt.plot(t_1, np.abs(B_2r), label='B_2 real')
+plt.plot(t_1, np.abs(B_1r), label='B_1 real')
+plt.plot(t_1, np.abs(B_2r), label='B_2 real')
 # plt.plot(t_1, lst, label='B_2 real')
 plt.xlabel('t')
 plt.grid(True)
