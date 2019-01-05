@@ -1,0 +1,14 @@
+delta=0.5;
+sigma=0.12
+ gamma=0.06;
+alpha=0.5
+sigma2=0
+p=0.185
+
+t_fin=2000;
+
+dx(1)=(1i*delta1-gamma1 + 1i*alpha*( abs(x(1))^2 +2*abs(x(2))^2   ) )*x(1) +1i*alpha*x(2)^2*conj(x(1))+p;
+dx(2)=(1i*delta2-gamma2 + 1i*alpha*( abs(x(2))^2 +2*abs(x(1))^2  ) )*x(2)  +1i*alpha*x(1)^2*conj(x(2));
+dx=dx.';
+
+return
