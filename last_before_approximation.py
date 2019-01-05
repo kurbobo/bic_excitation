@@ -61,8 +61,8 @@ z, infodict = apx.odeintz(apx.zfunc_previous, z0, t, args=(delta, chi_2, chi_3, 
 # for i in range(dist):
 #     lst.append(max)
 #print slow amplitudes
-# plt.plot(t,np.abs(z[:,0]), label='B_1')
-# plt.plot(t,np.abs(z[:,1]), label='B_2')
+plt.plot(t,np.abs(z[:,0]), label='B_1')
+plt.plot(t,np.abs(z[:,1]), label='B_2')
 # plt.plot(t,lst, label='B_2')
 #print real values
 plt.plot(t_1, np.abs(B_1r), label='B_1 real')
