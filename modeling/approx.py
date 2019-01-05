@@ -74,7 +74,7 @@ def real_circuit(delta, chi_2, chi_3, R, r, zed, R_, k, varepsilon_0, dist, coef
     t = np.linspace(0, dist, n)
 
     # step input
-    varepsilon = varepsilon_0 * np.cos(t + phi) * np.cos(delta * t)  # *np.heaviside(50-t,0)
+    varepsilon = varepsilon_0 * np.cos(t + phi) * np.cos(delta * t)#*np.heaviside(100000-t,0)
     # store solution
     U_1 = np.empty_like(t)
     V_1 = np.empty_like(t)
@@ -139,7 +139,7 @@ def circuit(delta, chi_2, chi_3, gamma_U, gamma_V, gamma_C, sigma, dist, coef, p
     t = np.linspace(0, dist, n)
 
     # step input
-    Pi = g * np.cos(t + phi) * np.cos(delta * t)  # *np.heaviside(50-t,0)
+    Pi = g * np.cos(t + phi) * np.cos(delta * t)*np.heaviside(100000-t,0)
     # store solution
     U_1 = np.empty_like(t)
     V_1 = np.empty_like(t)

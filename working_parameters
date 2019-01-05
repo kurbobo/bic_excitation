@@ -1,14 +1,15 @@
-delta=0.5;
-sigma=0.12
- gamma=0.06;
-alpha=0.5
-sigma2=0
-p=0.185
-
-t_fin=2000;
-
-dx(1)=(1i*delta1-gamma1 + 1i*alpha*( abs(x(1))^2 +2*abs(x(2))^2   ) )*x(1) +1i*alpha*x(2)^2*conj(x(1))+p;
-dx(2)=(1i*delta2-gamma2 + 1i*alpha*( abs(x(2))^2 +2*abs(x(1))^2  ) )*x(2)  +1i*alpha*x(1)^2*conj(x(2));
-dx=dx.';
-
-return
+Gamma= 9.999999999999999e-05
+alpha= 0.17416666666666666
+sigma= 0.12468827930174564
+sigma2= 0.006234413965087282
+delta_0= 0.5
+p= 0.007071067811865476
+----------------------
+delta= 0.5
+chi_2= 1.0
+chi_3= 0.01
+sigma= 0.25
+gamma_U= 9.999999999999999e-05
+gamma_V= 9.999999999999999e-05
+gamma_C= 0.05
+g= 0.005
