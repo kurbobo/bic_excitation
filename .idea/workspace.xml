@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c85da9c4-bc46-46fa-9515-55bb1b64e215" name="Default Changelist" comment="" />
+    <list default="true" id="c85da9c4-bc46-46fa-9515-55bb1b64e215" name="Default Changelist" comment="dark mode is finally excited without approximations!!!">
+      <change afterPath="$PROJECT_DIR$/B_20_delta_0_evg.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/debug.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/win_nonlin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evg_debug.py" beforeDir="false" afterPath="$PROJECT_DIR$/evg_debug.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modeling/approx.py" beforeDir="false" afterPath="$PROJECT_DIR$/modeling/approx.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/win.py" beforeDir="false" afterPath="$PROJECT_DIR$/win.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -10,13 +18,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/approvement.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/evg_debug.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="952">
-              <caret line="56" column="17" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
+            <state relative-caret-position="119">
+              <caret line="13" column="68" selection-start-line="13" selection-start-column="68" selection-end-line="13" selection-end-column="68" />
               <folding>
-                <element signature="e#59#77#0" expanded="true" />
+                <element signature="e#0#29#0" expanded="true" />
+                <marker date="1549466805061" expanded="true" signature="1539:2219" ph="..." />
               </folding>
             </state>
           </provider>
@@ -25,20 +34,45 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modeling/approx.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1921">
-              <caret line="114" column="24" selection-start-line="114" selection-start-column="24" selection-end-line="114" selection-end-column="24" />
+            <state relative-caret-position="203">
+              <caret line="130" column="32" selection-start-line="130" selection-start-column="32" selection-end-line="130" selection-end-column="32" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
+                <marker date="1549391468295" expanded="false" signature="1744:3654" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/last_before_approximation.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/B_20_delta_0.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="61" column="13" lean-forward="true" selection-start-line="61" selection-start-column="13" selection-end-line="61" selection-end-column="15" />
+            <state relative-caret-position="270">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/B_20_delta_0_evg.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/win.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="33" column="51" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -74,10 +108,16 @@
         <option value="$PROJECT_DIR$/modeling/attempt.py" />
         <option value="$PROJECT_DIR$/modeling/last_before_approximation.py" />
         <option value="$PROJECT_DIR$/real_curcuit.py" />
-        <option value="$PROJECT_DIR$/modeling/approx.py" />
         <option value="$PROJECT_DIR$/attempt.py" />
         <option value="$PROJECT_DIR$/approvement.py" />
         <option value="$PROJECT_DIR$/last_before_approximation.py" />
+        <option value="$PROJECT_DIR$/working_parameters" />
+        <option value="$PROJECT_DIR$/win_nonlin.py" />
+        <option value="$PROJECT_DIR$/debug.py" />
+        <option value="$PROJECT_DIR$/B_20_delta_0_evg.py" />
+        <option value="$PROJECT_DIR$/win.py" />
+        <option value="$PROJECT_DIR$/modeling/approx.py" />
+        <option value="$PROJECT_DIR$/evg_debug.py" />
       </list>
     </option>
   </component>
@@ -87,18 +127,18 @@
     <option name="width" value="1104" />
     <option name="height" value="1884" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="ProjectPane" />
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
@@ -118,8 +158,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.attempt (1)">
-    <configuration name="attempt (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.evg_debug">
+    <configuration name="B_20_delta_0_evg" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="bic_excitation-master" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -131,7 +171,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\kurbo\PycharmProjects\bic_excitation-master\approvement.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/B_20_delta_0_evg.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -140,7 +180,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="attempt" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="debug" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="bic_excitation-master" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -148,11 +188,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/modeling" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\kurbo\PycharmProjects\bic_excitation-master\approvement.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/debug.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -161,7 +201,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="last_before_approximation" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="evg_debug" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="bic_excitation-master" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -169,11 +209,53 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/modeling" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\kurbo\PycharmProjects\bic_excitation-master\last_before_approximation.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/evg_debug.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="win" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="bic_excitation-master" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/win.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="win_nonlin" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="bic_excitation-master" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/win_nonlin.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -184,9 +266,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.attempt (1)" />
-        <item itemvalue="Python.last_before_approximation" />
-        <item itemvalue="Python.attempt" />
+        <item itemvalue="Python.evg_debug" />
+        <item itemvalue="Python.B_20_delta_0_evg" />
+        <item itemvalue="Python.win" />
+        <item itemvalue="Python.debug" />
+        <item itemvalue="Python.win_nonlin" />
       </list>
     </recent_temporary>
   </component>
@@ -201,18 +285,74 @@
       <option name="presentableId" value="Default" />
       <updated>1546619850170</updated>
     </task>
+    <task id="LOCAL-00001" summary="delete venv">
+      <created>1546707223888</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1546707223888</updated>
+    </task>
+    <task id="LOCAL-00002" summary="comment">
+      <created>1546708140295</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1546708140295</updated>
+    </task>
+    <task id="LOCAL-00003" summary="comment">
+      <created>1546722878918</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1546722878918</updated>
+    </task>
+    <task id="LOCAL-00004" summary="dark mode is finally excited without approximations!!!">
+      <created>1546727742421</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1546727742421</updated>
+    </task>
+    <task id="LOCAL-00005" summary="theoretical prediction of linear part works well">
+      <created>1548957533176</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1548957533176</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24960254" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.38712242" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.40852576" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.37477797" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39964476" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3285968" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.053285968" />
+      <window_info anchor="bottom" id="SVN Repositories" order="11" weight="0.3285968" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.38712242" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.38721138" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -220,48 +360,121 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3285968" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.6678508" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.053285968" />
       <window_info anchor="bottom" id="SVN Repositories" order="11" weight="0.3285968" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
+    </layout-to-restore>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="delete venv" />
+    <MESSAGE value="comment" />
+    <MESSAGE value="dark mode is finally excited without approximations!!!" />
+    <MESSAGE value="theoretical prediction of linear part works well" />
+    <option name="LAST_COMMIT_MESSAGE" value="theoretical prediction of linear part works well" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/working_parameters">
+    <entry file="file://$PROJECT_DIR$/real_curcuit.py" />
+    <entry file="file://$PROJECT_DIR$/pics/minus2.png" />
+    <entry file="file://$PROJECT_DIR$/pics/minus1.png" />
+    <entry file="file://$PROJECT_DIR$/pics/pic0.1_0.1_0.001_0.2_0.005_0.1.png" />
+    <entry file="file://$PROJECT_DIR$/pics/pic1.0_0.01_1e-08_0.00010000999999999999_0.05_0.009000000000000001.png" />
+    <entry file="file://$PROJECT_DIR$/last_before_approximation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="9" lean-forward="true" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+        <state relative-caret-position="1255">
+          <caret line="76" column="43" lean-forward="true" selection-start-line="76" selection-start-column="43" selection-end-line="76" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/real_curcuit.py" />
+    <entry file="file://$PROJECT_DIR$/working_parameters">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="28" selection-start-column="28" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/approvement.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="56" column="17" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
+        <state relative-caret-position="17">
+          <caret line="19" column="14" lean-forward="true" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
           <folding>
             <element signature="e#59#77#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modeling/approx.py">
+    <entry file="file://$PROJECT_DIR$/win_nonlin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1921">
-          <caret line="114" column="24" selection-start-line="114" selection-start-column="24" selection-end-line="114" selection-end-column="24" />
+        <state relative-caret-position="451">
+          <caret line="73" column="36" lean-forward="true" selection-start-line="73" selection-start-column="36" selection-end-line="73" selection-end-column="36" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/last_before_approximation.py">
+    <entry file="file://$PROJECT_DIR$/debug.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="61" column="13" lean-forward="true" selection-start-line="61" selection-start-column="13" selection-end-line="61" selection-end-column="15" />
+        <state relative-caret-position="-425">
+          <caret line="7" column="71" lean-forward="true" selection-start-line="7" selection-start-column="71" selection-end-line="7" selection-end-column="71" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/win.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="33" column="51" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/B_20_delta_0.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/B_20_delta_0_evg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modeling/approx.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="130" column="32" selection-start-line="130" selection-start-column="32" selection-end-line="130" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <marker date="1549391468295" expanded="false" signature="1744:3654" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/evg_debug.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="13" column="68" selection-start-line="13" selection-start-column="68" selection-end-line="13" selection-end-column="68" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+            <marker date="1549466805061" expanded="true" signature="1539:2219" ph="..." />
           </folding>
         </state>
       </provider>
