@@ -139,7 +139,7 @@ def circuit(delta, chi_2, chi_3, gamma_U, gamma_V, gamma_C, sigma, dist, coef, p
     t = np.linspace(0, dist, n)
 
     # step input
-    Pi =2*g * np.cos((1 + delta) * t + phi)  *np.heaviside(5000-t,0)
+    Pi =2*g * np.cos((1 +delta) * t + phi)#  *np.heaviside(5000-t,0)
     # (np.exp((1j+delta)*t)).real
     # store solution
     U_1 = np.empty_like(t)
@@ -188,63 +188,63 @@ def zfunc_previous(z, t, delta, chi_2, chi_3, gamma_U, gamma_V, gamma_C, sigma, 
             (-1j * delta - gamma + 2 * i_Sigma2_minus_sigma + 2j * alpha * (
                     np.abs(B_2) ** 2 + 2 * np.abs(B_1) ** 2)) * B_2 +
             2j * alpha * B_1 ** 2 * np.conj(B_2) + p]
-# def circuit_1(delta, chi_2, chi_3, gamma_U, gamma_V, gamma_C, sigma, dist, coef, phi, g):
-#     def model(z, t, Pi):
-#         U_1 = z[0]
-#         V_1 = z[1]
-#         U_2 = z[2]
-#         V_2 = z[3]
-#         U_C = z[4]
-#         V_C = -gamma_C * U_C + sigma * (U_1 - U_2) + Pi
-#         dU_1dt = V_1 - gamma_U * U_1 + (chi_2 * U_1 + chi_3 * U_1 ** 2) * V_1 - V_C
-#         dV_1dt = -U_1 - gamma_V * V_1
-#         dU_2dt = V_2 - gamma_U * U_2 + (chi_2 * U_2 + chi_3 * U_2 ** 2) * V_2 + V_C
-#         dV_2dt = -U_2 - gamma_V * V_2
-#         dU_Cdt = -gamma_C * U_C + sigma * (U_1 - U_2) + Pi
-#         dzdt = [dU_1dt, dV_1dt, dU_2dt, dV_2dt, dU_Cdt]
-#         return dzdt
-#
-#     # initial condition
-#     z_0 = [0.000001, 0, 0.000001, 0, 0]
-#
-#     # number of time points
-#
-#     # time points
-#     # dist = 10000
-#     # coef = 5
-#     n = dist * coef  # было умножить
-#     t = np.linspace(0, dist, n)
-#
-#     # step input
-#     Pi =2* g * np.cos((1 + delta) * t + phi)  # *np.heaviside(50000-t,0)
-#     # (np.exp((1j+delta)*t)).real
-#     # store solution
-#     U_1 = np.empty_like(t)
-#     V_1 = np.empty_like(t)
-#     U_2 = np.empty_like(t)
-#     V_2 = np.empty_like(t)
-#     U_C = np.empty_like(t)
-#     # record initial conditions
-#     U_1[0] = z_0[0]
-#     V_1[0] = z_0[1]
-#     U_2[0] = z_0[2]
-#     V_2[0] = z_0[3]
-#     U_C[0] = z_0[4]
-#     # solve ODE
-#     for i in range(1, n):
-#         # span for next time step
-#         tspan = [t[i - 1], t[i]]
-#         # solve for next step
-#         z = odeint(model, z_0, tspan, args=(Pi[i],))
-#         # store solution for plotting
-#         U_1[i] = z[1][0]
-#         V_1[i] = z[1][1]
-#         U_2[i] = z[1][2]
-#         V_2[i] = z[1][3]
-#         U_C[i] = z[1][4]
-#         # next initial condition
-#         z_0 = z[1]
-#     B_1 = (U_1 + U_2) / 2
-#     B_2 = (U_1 - U_2) / 2
-#     return t, U_1, U_2
-#
+def circuit_1(delta, chi_2, chi_3, gamma_U, gamma_V, gamma_C, sigma, dist, coef, phi, g):
+    def model(z, t, Pi):
+        U_1 = z[0]
+        V_1 = z[1]
+        U_2 = z[2]
+        V_2 = z[3]
+        U_C = z[4]
+        V_C = -gamma_C * U_C + sigma * (U_1 - U_2) + Pi
+        dU_1dt = V_1 - gamma_U * U_1 + (chi_2 * U_1 + chi_3 * U_1 ** 2) * V_1 - V_C
+        dV_1dt = -U_1 - gamma_V * V_1
+        dU_2dt = V_2 - gamma_U * U_2 + (chi_2 * U_2 + chi_3 * U_2 ** 2) * V_2 + V_C
+        dV_2dt = -U_2 - gamma_V * V_2
+        dU_Cdt = -gamma_C * U_C + sigma * (U_1 - U_2) + Pi
+        dzdt = [dU_1dt, dV_1dt, dU_2dt, dV_2dt, dU_Cdt]
+        return dzdt
+
+    # initial condition
+    z_0 = [0.000001, 0, 0.000001, 0, 0]
+
+    # number of time points
+
+    # time points
+    # dist = 10000
+    # coef = 5
+    n = dist * coef  # было умножить
+    t = np.linspace(0, dist, n)
+
+    # step input
+    Pi =2* g * np.cos((1 + delta) * t + phi)  # *np.heaviside(50000-t,0)
+    # (np.exp((1j+delta)*t)).real
+    # store solution
+    U_1 = np.empty_like(t)
+    V_1 = np.empty_like(t)
+    U_2 = np.empty_like(t)
+    V_2 = np.empty_like(t)
+    U_C = np.empty_like(t)
+    # record initial conditions
+    U_1[0] = z_0[0]
+    V_1[0] = z_0[1]
+    U_2[0] = z_0[2]
+    V_2[0] = z_0[3]
+    U_C[0] = z_0[4]
+    # solve ODE
+    for i in range(1, n):
+        # span for next time step
+        tspan = [t[i - 1], t[i]]
+        # solve for next step
+        z = odeint(model, z_0, tspan, args=(Pi[i],))
+        # store solution for plotting
+        U_1[i] = z[1][0]
+        V_1[i] = z[1][1]
+        U_2[i] = z[1][2]
+        V_2[i] = z[1][3]
+        U_C[i] = z[1][4]
+        # next initial condition
+        z_0 = z[1]
+    B_1 = (U_1 + U_2) / 2
+    B_2 = (U_1 - U_2) / 2
+    return t, U_1, U_2
+

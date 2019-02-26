@@ -14,6 +14,6 @@ plt.plot(delta_0,B_plus)
 plt.ylabel('$|B_{20}|$')
 plt.xlabel('$\delta_0$')
 plt.show()
-delta_0=3
-B=np.sqrt((4*delta_0+2*np.sqrt(4*delta_0**2-3*Gamma**2))/alpha)
-print(B)
+# delta_0=1
+# B=np.sqrt((4*delta_0+2*np.sqrt(4*delta_0**2-3*Gamma**2))/alpha)
+# print(B)
