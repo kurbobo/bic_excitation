@@ -19,7 +19,7 @@ def zfunc_nonlean_B(z, t, delta, chi_2, chi_3, gamma_U, gamma_V, gamma_C, s, g):
 z0 = np.array([0.000001/np.sqrt(2), 0])
 delta=9e-02
 chi_2=0#3e-01
-chi_3=1#
+chi_3=0.3#
 gamma_U=3e-01
 gamma_V=gamma_U
 gamma_C=3e-1
@@ -52,12 +52,15 @@ z, infodict = apx.odeintz(zfunc_nonlean_B, z0, t, args=(delta, chi_2, chi_3, gam
 B_1=z[:,0]*np.exp(1j*(1+delta)*t)*xi
 B_2=z[:,1]*np.exp(1j*(1+delta)*t)*xi
 plt.clf()
-plt.plot(t_1[start:stop], (U_2r[start:stop]), label='A_2 real')
+# plt.plot(t_1[start:stop], (U_2r[start:stop]), label='A_2 real')
 # plt.plot(t[start:stop],2*np.real(A_2)[start:stop], label='A_2_first')
-plt.plot(t[start:stop],2*np.real(B_1+B_2)[start:stop], label='B_1_plus_B_2_first')
-plt.plot(t_1[start:stop], (U_1r[start:stop]), label='A_1 real')
+plt.plot(t[start:stop],2*np.real(B_2)[start:stop], label='B_2_first')
+# plt.plot(t_1[start:stop], (U_1r[start:stop]), label='A_1 real')
 # plt.plot(t[start:stop],2*np.real(A_1)[start:stop], label='A_1_first')
-plt.plot(t[start:stop],2*np.real(B_1-B_2)[start:stop], label='B_1_minus_B_2_first')
+# plt.plot(t[start:stop],2*np.real(B_1-B_2)[start:stop], label='B_1_minus_B_2_first')
+plt.plot(t_1[start:stop], (((U_2r-U_1r)/2)[start:stop]), label='B_2 real')
+plt.plot(t[start:stop],2*np.real(B_1)[start:stop], label='B_1_first')
+plt.plot(t_1[start:stop], (((U_2r+U_1r)/2)[start:stop]), label='B_1 real')
 plt.xlabel('t')
 plt.grid(True)
 plt.legend(loc='best')
