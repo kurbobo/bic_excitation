@@ -1,6 +1,6 @@
 import modeling.approx as apx
 import numpy as np, matplotlib.pyplot as plt
-xi=1/np.sqrt(2)
+xi=1/2#np.sqrt(2)
 def zfunc_nonlean_A(z, t, delta, chi_2, chi_3, gamma_U, gamma_V, gamma_C, s, g):
     A_1, A_2 = z
     gamma = (gamma_V + gamma_U) / 2
@@ -17,51 +17,61 @@ def zfunc_nonlean_B(z, t, delta, chi_2, chi_3, gamma_U, gamma_V, gamma_C, s, g):
             (-1j * delta- gamma)* B_20 + 1j * alpha * ((np.abs(B_20) ** 2 + 2 * np.abs(b) ** 2) * B_20
              + b ** 2 * np.conj(B_20)) + 1j / (1j + gamma_C) * (-s * B_20 + g / 2 / xi)]
 z0 = np.array([0.000001/np.sqrt(2), 0])
-delta=9e-02
-chi_2=0#3e-01
-chi_3=0.3#
-gamma_U=3e-01
-gamma_V=gamma_U
-gamma_C=3e-1
-s=3e-01
-#39500
-dist=10000
-start=dist-100
-stop=dist
-phi=0
-g=0.5
-coef=10
-t = np.arange(0, dist,1/coef)
+# delta=0.5
+chi_2 = 0
 
-t_1,U_1r,U_2r=apx.circuit(delta=delta,
-                                                          chi_2=chi_2,
-                                                          chi_3=chi_3,
-                                                          gamma_U=gamma_U,
-                                                   gamma_V=gamma_V,
-                                                          gamma_C=gamma_C,
-                                                   sigma=s,
-                                                          dist=dist,
-                                                          coef=coef,
-                                                          phi=phi,
-                                                   g=g)
-z, infodict = apx.odeintz(zfunc_nonlean_B, z0, t, args=(delta, chi_2, chi_3, gamma_U, gamma_V, gamma_C, s, g), full_output=True)
-# C_1=z[:,0]
-# C_2=z[:,1]
-# A_1=C_1*np.exp(1j*(1+delta)*t)*xi
-# A_2=C_2*np.exp(1j*(1+delta)*t)*xi
-B_1=z[:,0]*np.exp(1j*(1+delta)*t)*xi
-B_2=z[:,1]*np.exp(1j*(1+delta)*t)*xi
-plt.clf()
-# plt.plot(t_1[start:stop], (U_2r[start:stop]), label='A_2 real')
-# plt.plot(t[start:stop],2*np.real(A_2)[start:stop], label='A_2_first')
-plt.plot(t[start:stop],2*np.real(B_2)[start:stop], label='B_2_first')
-# plt.plot(t_1[start:stop], (U_1r[start:stop]), label='A_1 real')
-# plt.plot(t[start:stop],2*np.real(A_1)[start:stop], label='A_1_first')
-# plt.plot(t[start:stop],2*np.real(B_1-B_2)[start:stop], label='B_1_minus_B_2_first')
-plt.plot(t_1[start:stop], (((U_2r-U_1r)/2)[start:stop]), label='B_2 real')
-plt.plot(t[start:stop],2*np.real(B_1)[start:stop], label='B_1_first')
-plt.plot(t_1[start:stop], (((U_2r+U_1r)/2)[start:stop]), label='B_1 real')
-plt.xlabel('t')
-plt.grid(True)
-plt.legend(loc='best')
-plt.show()
+# 3e-01
+# chi_3=0.66#
+gamma_U=6e-04
+# gamma_V=gamma_U
+gamma_C=1
+s=6e-01
+#39500
+dist=5000
+start=dist-100
+stop= dist
+phi=0
+g=0.0185
+coef=10
+for delta in [0.4]:
+    for chi_3 in [0.6]:
+        # for gamma_U in [6e-02,6e-05]:
+        #     for gamma_C in [10]:
+                for s in [6e-3]:
+                    for g in [0.000185]:
+                        gamma_V=gamma_U
+                        t = np.arange(0, dist,1/coef)
+                        t_1,U_1r,U_2r=apx.circuit(delta=delta,
+                                                                                  chi_2=chi_2,
+                                                                                  chi_3=chi_3,
+                                                                                  gamma_U=gamma_U,
+                                                                           gamma_V=gamma_V,
+                                                                                  gamma_C=gamma_C,
+                                                                           sigma=s,
+                                                                                  dist=dist,
+                                                                                  coef=coef,
+                                                                                  phi=phi,
+                                                                           g=g)
+                        z, infodict = apx.odeintz(zfunc_nonlean_B, z0, t, args=(delta, chi_2, chi_3, gamma_U, gamma_V, gamma_C, s, g), full_output=True)
+                        # C_1=z[:,0]
+                        # C_2=z[:,1]
+                        # A_1=C_1*np.exp(1j*(1+delta)*t)*xi
+                        # A_2=C_2*np.exp(1j*(1+delta)*t)*xi
+                        B_1=z[:,0]*xi*np.exp(1j*(1+delta)*t)##np.exp(1j*(1+delta)*t)*
+                        B_2=z[:,1]*xi*np.exp(1j*(1+delta)*t)#*np.exp(1j*(1+delta)*t)#np.exp(1j*(1+delta)*t)*
+                        plt.clf()
+                        plt.plot(t_1[start:stop], (U_2r[start:stop]), label='A_2 real')
+                        plt.plot(t[start:stop],(1+delta)* (2 * np.real(B_1 + B_2))[start:stop], label='B_1_minus_B_2_first')
+                        # plt.plot(t[start:stop],2*np.real(A_2)[start:stop], label='A_2_first')
+                        # plt.plot(t[start:stop],2*np.real(B_2)[start:stop], label='B_2_first')
+                        plt.plot(t_1[start:stop], (U_1r[start:stop]), label='A_1 real')
+                        # plt.plot(t[start:stop],2*np.real(A_1)[start:stop], label='A_1_first')
+                        plt.plot(t[start:stop],(1+delta)*(2*np.real(B_1-B_2))[start:stop], label='B_1_minus_B_2_first')
+                        # plt.plot(t_1[start:stop], (((U_2r-U_1r)/2)[start:stop]), label='B_2 real')
+                        # plt.plot(t[start:stop],2*np.real(B_1)[start:stop], label='B_1_first')
+                        # plt.plot(t_1[start:stop], (((U_2r+U_1r)/2)[start:stop]), label='B_1 real')
+                        plt.xlabel('t')
+                        plt.grid(True)
+                        plt.legend(loc='best')
+                        plt.show()
+                        # plt.savefig("pics/delta="+str(delta)+"chi3="+str(chi_3)+"gamma="+str(gamma_U)+"gamma_C="+str(gamma_C)+"s="+str(s)+"g="+str(g)+".png")
