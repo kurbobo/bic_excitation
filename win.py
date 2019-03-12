@@ -1,4 +1,4 @@
-import modeling.approx as apx
+import approx as apx
 import numpy as np, matplotlib.pyplot as plt
 xi=1#np.sqrt(2)
 def zfunc_nonlean_B(z, t, delta, alpha, gamma, gamma_C, s, g):

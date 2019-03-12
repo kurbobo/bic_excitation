@@ -1,7 +1,5 @@
 import numpy as np
 from scipy.integrate import odeint
-# import numba as nb
-# @nb.jit
 def odeintz(func, z0, t, **kwargs):
     """An odeint-like function for complex valued differential equations."""
 
