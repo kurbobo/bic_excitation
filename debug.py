@@ -26,9 +26,9 @@ gamma_C=1
 s=6e-03
 #39500
 coef=10
-dist=500*coef
-start=400*coef#dist-100
-stop= 500*coef#dist
+dist=5000*coef
+start=(dist-100)*coef#dist-100
+stop= dist*coef#dist
 phi=0
 g=0.0185
 t = np.arange(0, dist,1/coef)

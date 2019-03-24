@@ -9,7 +9,7 @@ def zfunc_nonlean_B(z, t, delta, alpha, gamma, gamma_C, s, g):
             + 1j * alpha * B_20 ** 2 * np.conj(b),
             (-1j * delta- gamma)* B_20 + 1j * alpha * ((np.abs(B_20) ** 2 + 2 * np.abs(b) ** 2) * B_20
              + b ** 2 * np.conj(B_20)) + 1j / (1j + gamma_C) * (-s * B_20 + g / 2 / xi)]
-z0 = np.array([3.5333586086881496e-16+(1.063600516608418e-16j),0.5508949285073118+(-0.13223625528845565j)])#0.5601364600973774, 0.33891810476589906
+z0 = np.array([6.527729810487234e-15+2.197688527407939e-15j,0.5571070388267081-0.13189796679776122j])#0.5601364600973774, 0.33891810476589906
 delta=0.8
 alpha=1
 gamma=0.1
@@ -18,13 +18,7 @@ s=1
 #39500
 dist=1000
 phi=0
-gamma_light=gamma + s/(1+gamma_C**2)
-delta_light=delta + gamma_C*s/(1+gamma_C**2)
-print('delta_light = ',delta_light)
-print('gamma_light = ',gamma_light)
-g=1.95#15.495031461729917
-p=1j*g/2/xi/(1j+gamma_C)
-print('p = ',p)
+g=1.85#15.495031461729917
 coef=5
 start=0*coef#dist-100
 stop= dist*coef
